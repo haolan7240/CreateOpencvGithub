@@ -41,10 +41,33 @@ int main()
 	CvPlot::show("mywindow", axes);
 	*/
 
-	//µ½Images
+	/*
+	auto mat = cv::imread("C:/Users/Hao_Lan/Desktop/Picture/person/James3.png");
+	
+	auto axes = CvPlot::plotImage(mat);
+	
+	CvPlot::showImage(mat);
+	*/
+	/*
+	cv::Mat1b image(40, 120, 255);
+	cv::putText(image, "CvPlot", { 5,40 }, cv::FONT_HERSHEY_TRIPLEX, 1, cv::Scalar::all(150), 5, cv::LINE_AA);
+	
+	std::vector<std::vector<cv::Point>> contours;
+	cv::findContours(image == 150, contours, cv::RETR_LIST, cv::CHAIN_APPROX_TC89_L1);
+	auto axes = CvPlot::plotImage(image);
+	axes.enableHorizontalGrid();
+	axes.enableVerticalGrid();
+	
+	for (auto contour : contours)
+	{
+		contour.push_back(contour.front());
+		axes.create<CvPlot::Series>(contour, "o-k");
+	}
+	CvPlot::show("contours", axes);
+	*/
 
-
-
+	//µ½Custom Drawables
+	
 	cv::waitKey();
 	return 0;
 }
